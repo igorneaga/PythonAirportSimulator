@@ -1,0 +1,5 @@
+# Ugly mac OS file
+*. DS_Store
+
+# Object Files
+*.class
