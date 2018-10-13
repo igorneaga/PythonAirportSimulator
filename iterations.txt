@@ -1,0 +1,20 @@
+Erik Ayavaca-Tirado
+Iteration tasks for python project
+10/12/18
+
+Below is list of parts for this project. 
+Main components/functions for this project:
+Read in file 
+Priority queue( find or create)
+Simulation time loop
+Print in format fashion
+Contents of the queue 
+Day’s flight
+
+Plans for iteration 1:
+
+	For iteration 1 I plan to have programmed the functionality for the ability to read 
+in a file. I will also set up the priority queue for this iteration. The only thing that 
+is certain is that I will be programming the file reader for this iteration. 
+
+Plans for iteration 2:
