@@ -29,4 +29,10 @@ def printQueue(queue, currentTime):
 print("\n=======================================================")
     print("The queue at Time: " + str(currentTime))
     if (currentTime >= queue[0][2]):
+        print("Currently Departing: " + str(queue[0][0]) + " (started at " + str(queue[0][4]) + ")")
+        print("Waiting: ")
+        for i in range(1, len(queue)):
+            print(str(queue[i][0]) + " (Scheduled for " + str(queue[i][4]) + ")")
 
+    else:
+        
