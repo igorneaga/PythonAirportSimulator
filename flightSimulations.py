@@ -25,17 +25,26 @@ def read_file(flightRequests):
 
 def printQueue(queue, currentTime):
     if len(queue) > 0:
-
-print("\n=======================================================")
-    print("The queue at Time: " + str(currentTime))
-    if (currentTime >= queue[0][2]):
+        print("\n=======================================================")
+        print("The queue at Time: " + str(currentTime))
+        if (currentTime >= queue[0][2]):
         print("Currently Departing: " + str(queue[0][0]) + " (started at " + str(queue[0][4]) + ")")
         print("Waiting: ")
         for i in range(1, len(queue)):
             print(str(queue[i][0]) + " (Scheduled for " + str(queue[i][4]) + ")")
 
-    else:
+        else:
         print("Currently Departing: No flights are curentlt departing ")
         print("Waiting: ")
         for i in range(1, len(queue)):
+            print(str(queue[i][0]) + " (Scheduled for " + str(queue[i][4]) + ")")
+
+    else:
+        print("\n=======================================================")
+        print("The queue at Time: " + str(currentTime))
+        print("Currently Departing: No flights are curentlt departing ")
+        print("Waiting: ")
+
+
+
 
