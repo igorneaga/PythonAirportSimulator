@@ -35,4 +35,7 @@ print("\n=======================================================")
             print(str(queue[i][0]) + " (Scheduled for " + str(queue[i][4]) + ")")
 
     else:
-        
+        print("Currently Departing: No flights are curentlt departing ")
+        print("Waiting: ")
+        for i in range(1, len(queue)):
+
