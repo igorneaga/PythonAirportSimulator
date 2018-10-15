@@ -1,8 +1,14 @@
 '''
 By Erik Ayavaca-Tirado
+In this class there will be 4 functions that will do the following:
+1: read in a file
+2: hold the items from the file that will be used in a different function
+3. Simulate an actual airport , so adding/removing planes
+4.
 '''
 
 import csv
+# import sys
 
 # Holds all flight requests from the file
 allFlights = []
@@ -14,7 +20,7 @@ departedFlights = []
 def read_file(flightRequests):  # Function that will read in the file
     allFlights = []  # Flight request are held in this
 
-    with open(flightRequests, 'rb') as f:
+    with open(flightRequests, 'rt') as f:
         file = csv.reader(f)
         _ = next(file)  # removes cvs header
 
@@ -86,12 +92,14 @@ def simulate_airport(allFlights):
 def takeOffPrint(departedFlights):
 
     print("\n=======================================================")
-        print("Take off times: ")
-        for i in range(len(departedFlights)):
+    print("Take off times: ")
+    for i in range(len(departedFlights)):
+        print(str(departedFlights[i][0]) + " (" + str(departedFlights[i][4]) + "-" + str(departedFlights[i][5]) + ")" )
 
-
-
-
-if __name__ == "__main__":
-    __test__main__()
+# Testing purposes ignore below
+ # if __name__ == "__main__":
+     #__test__main__()
+    # Flights = read_file('test.csv')
+    # simulate_airport(Flights)
+    # takeOffPrint(departedFlights)
 
