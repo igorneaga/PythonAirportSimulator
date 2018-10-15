@@ -57,23 +57,38 @@ def simulate_airport(allFlights):
     queueCount = 0
 
     # will continue running program if the queue count is less than number of flights or if the queue is not empty
-    for i in range(len(allFlights)):
-        if currentTime == allFlights[i][1]:
-            queue.append(allFlights[i])
-            queueCount += 1
+    while queueCount < len(allFlights) or len(queue) >= 0:
+        for i in range(len(allFlights)):
+            if currentTime == allFlights[i][1]:
+                queue.append(allFlights[i])
+                queueCount += 1
 
     # sort queue based on requested departured time
-    queue = sorted(queue, key=lambda x: x[2])
+        queue = sorted(queue, key=lambda x: x[2])
 
     # Still need a way to sort out the actual departure times
 
     # remove flights that have already departed from the queue
-    if len(queue) > 0:
-        if queue[0][5] <= currentTime:
-            departedFlights.append(queue[0])
-            del queue[0]
+        if len(queue) > 0:
+            if queue[0][5] <= currentTime:
+                departedFlights.append(queue[0])
+                del queue[0]
 
-    printQueue(queue, currentTime)
+        printQueue(queue, currentTime)
+
+    # break out of the loop after flights have been queued and departed
+        if len(queue) == 0 and queueCount >= len(allFlights):
+            break
+
+        currentTime += 1
+
+
+def takeOffPrint(departedFlights):
+
+    print("\n=======================================================")
+        print("Take off times: ")
+        for i in range(len(departedFlights)):
+
 
 
 
