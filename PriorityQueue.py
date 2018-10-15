@@ -1,6 +1,6 @@
 '''
 By: Erik Ayavaca-Tirado
 
-In this class I will be using the
+Not using this anymore. might using if using heapq for the priority queue.
 
 '''
