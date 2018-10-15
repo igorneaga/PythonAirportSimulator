@@ -1,6 +1,6 @@
 Erik Ayavaca-Tirado
 Iteration tasks for python project
-10/12/18
+10/13/18
 
 Below is list of parts for this project. 
 Main components/functions for this project:
@@ -13,8 +13,12 @@ Day’s flight
 
 Plans for iteration 1:
 
-	For iteration 1 I plan to have programmed the functionality for the ability to read 
-in a file. I will also set up the priority queue for this iteration. The only thing that 
-is certain is that I will be programming the file reader for this iteration. 
+	For iteration 1 I plan to  program the reading in the  of a file. The input format is going to cvs. The next function
+	is going be called print queue which shall hold the items from the file that will be used in a different function
+	and also printout the queue at each time.The next function simulate airport will Simulate an actual airport ,
+	so adding/removing planes based on request time. (this will be the priority queue).  I plan to not to have the
+	priority queue part for it for this iteration. The last part I plan to have is actually having the printout for
+	all flights.
 
 Plans for iteration 2:
+    Work on the priority queue for this part and fixed any error within
