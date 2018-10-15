@@ -1,12 +1,14 @@
 '''
 By Erik Ayavaca-Tirado
+
 '''
 
 import sys
 import flightSimulations
 
 
-def __test__main__():
+if __name__ == "__main__":
     flights = flightSimulations.read_file(sys.argv[1])
-    print(flights)
+    flightSimulations.simulate_airport(flights)
+    flightSimulations.takeOffPrint(flights)
 
