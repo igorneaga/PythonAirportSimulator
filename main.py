@@ -1,5 +1,6 @@
 '''
 By Erik Ayavaca-Tirado
+This is the main were the call to the functions in the flightsSimulations class will be made to
 
 '''
 
