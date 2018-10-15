@@ -1,10 +1,10 @@
 '''
 By Erik Ayavaca-Tirado
 In this class there will be 4 functions that will do the following:
-1: read in a file
-2: hold the items from the file that will be used in a different function
-3. Simulate an actual airport , so adding/removing planes
-4.
+1. read in a file
+2. hold the items from the file that will be used in a different function and also printout the queue at each time
+3. Simulate an actual airport , so adding/removing planes based on request time. (this will be the priority queue)
+4. print out the the queue
 '''
 
 import csv
