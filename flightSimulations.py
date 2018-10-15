@@ -65,9 +65,15 @@ def simulate_airport(allFlights):
     # sort queue based on requested departured time
     queue = sorted(queue, key=lambda x: x[2])
 
-    # Still need a way to sortout the actual departure times
+    # Still need a way to sort out the actual departure times
 
-    #
+    # remove flights that have already departed from the queue
+    if len(queue) > 0:
+        if queue[0][5] <= currentTime:
+            departedFlights.append(queue[0])
+            del queue[0]
+
+    printQueue(queue, currentTime)
 
 
 
