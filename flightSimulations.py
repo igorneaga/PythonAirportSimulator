@@ -49,13 +49,26 @@ def printQueue(queue, currentTime):
         print("Currently Departing: No flights are curentlt departing ")
         print("Waiting: ")
 
+
 # This function is going to be removing and adding flights from the queue. Basically like how the airport functions
 def simulate_airport(allFlights):
-    queue = [] # queue used for flight request
+    queue = []  # queue used for flight request
     currentTime = 0
     queueCount = 0
 
-    # will continue running program if the queue count is less than number of flights
+    # will continue running program if the queue count is less than number of flights or if the queue is not empty
+    for i in range(len(allFlights)):
+        if currentTime == allFlights[i][1]:
+            queue.append(allFlights[i])
+            queueCount += 1
+
+    # sort queue based on requested departured time
+    queue = sorted(queue, key=lambda x: x[2])
+
+    # Still need a way to sortout the actual departure times
+
+    #
+
 
 
 if __name__ == "__main__":
