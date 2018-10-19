@@ -1,3 +1,6 @@
+import csv
+# import sys
+
 '''
 By Erik Ayavaca-Tirado
 In this class there will be 4 functions that will do the following:
@@ -7,8 +10,6 @@ In this class there will be 4 functions that will do the following:
 4. print out the the queue
 '''
 
-import csv
-# import sys
 
 # Holds all flight requests from the file
 allFlights = []
