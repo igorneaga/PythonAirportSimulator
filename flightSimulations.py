@@ -90,7 +90,7 @@ def simulate_airport(allFlights):
     # sort queue based on requested departure time
         queue = sorted(queue, key=lambda x: x[2])
 
-    # Still need a way to sort out the actual departure times
+    # Still need a way to sort out the actual departure times. Done with this.
 
     # updating the start and end times for the flights in the queue
         for i in range(len(queue)):
