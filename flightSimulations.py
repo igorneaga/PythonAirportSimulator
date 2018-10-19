@@ -92,6 +92,12 @@ def simulate_airport(allFlights):
 
     # Still need a way to sort out the actual departure times
 
+    # updating the start and end times for the flights in the queue
+        for i in range(len(queue)):
+            if i == 0:  # 1st flight of the queue
+                if queue[i][5] == 0:  # if 1st flight actual start time is equal to 0
+                    queue
+
     # remove flights that have already departed from the queue
         if len(queue) > 0:
             if queue[0][5] <= currentTime:
