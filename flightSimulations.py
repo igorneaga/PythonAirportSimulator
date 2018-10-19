@@ -57,7 +57,7 @@ def printQueue(queue, currentTime):
             print(str(queue[i][0]) + " (Scheduled for " + str(queue[i][4]) + ")")
 
         else:
-            print("Currently Departing: No flights are curentlt departing ")
+            print("Currently Departing: No flights are currently departing ")
             print("Waiting: ")
         for i in range(1, len(queue)):
             print(str(queue[i][0]) + " (Scheduled for " + str(queue[i][4]) + ")")
@@ -65,7 +65,7 @@ def printQueue(queue, currentTime):
     else:
         print("\n=======================================================")
         print("The queue at Time: " + str(currentTime))
-        print("Currently Departing: No flights are curentlt departing ")
+        print("Currently Departing: No flights are currently departing ")
         print("Waiting: ")
 
 
@@ -89,8 +89,6 @@ def simulate_airport(allFlights):
 
     # sort queue based on requested departure time
         queue = sorted(queue, key=lambda x: x[2])
-
-    # Still need a way to sort out the actual departure times. Done with this.
 
     # updating the start and end times for the flights in the queue
         for i in range(len(queue)):
@@ -131,14 +129,9 @@ def takeOffPrint(departedFlights):
     '''
 
     print("\n=======================================================")
-    print("Take off times: ")
+    print("Actual take off times: ")
     for i in range(len(departedFlights)):
-        print(str(departedFlights[i][0]) + " (" + str(departedFlights[i][4]) + "-" + str(departedFlights[i][5]) + ")" )
+        print(str(departedFlights[i][0]) + " (" + str(departedFlights[i][4]) + "-" + str(departedFlights[i][5]) + ")")
 
-# Testing purposes ignore below
- # if __name__ == "__main__":
-     #__test__main__()
-    # Flights = read_file('test.csv')
-    # simulate_airport(Flights)
-    # takeOffPrint(departedFlights)
+
 
