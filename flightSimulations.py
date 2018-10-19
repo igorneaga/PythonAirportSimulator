@@ -102,8 +102,11 @@ def simulate_airport(allFlights):
             if i > 0:  # all other flights in queue
                 if queue[i-1][5] > queue[i][2]:  # if previous flight end time,less than current flight requested start
                     queue[i][4] = queue[i-1][5]  # current flight actual Start time equal to previous flight end time
+                    queue[i][5] = (queue[i][4] + queue[i][3])  # Current Flight actual endtime = current flight
 
-
+                else:
+                    queue[i][4] = queue[i][2]  # curent flight actual start time = current flight flight request time
+                    queue[i][5] = (queue[i][4] + queue[i][3])  #
 
     # remove flights that have already departed from the queue
         if len(queue) > 0:
