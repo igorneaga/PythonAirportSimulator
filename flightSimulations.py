@@ -45,7 +45,7 @@ def read_file(flightRequests):  # Function that will read in the file
 # prints flights that are currently in the queue
 def printQueue(queue, currentTime):
     '''
-
+    This function is printing out the
     :param queue:
     :param currentTime:
     :return:
@@ -127,7 +127,8 @@ def simulate_airport(allFlights):
 
 def takeOffPrint(departedFlights):
     '''
-    In this
+    In this function we are taking in the list of updated departed flights that were updated in the airport simulations
+    function.
     :param departedFlights:
     :return:
     '''
