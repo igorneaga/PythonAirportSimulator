@@ -22,7 +22,8 @@ departedFlights = []
 
 def read_file(flightRequests):  # Function that will read in the file
     '''
-
+    This function will take in the file that is read in from the command prompt. This variable name is flightRequests.
+    It will put the file data in to list named allFlights and then returns it ,so it may be used for the other functions
     :param flightRequests:
     :return:
 
@@ -118,6 +119,7 @@ def simulate_airport(allFlights):
 
     # break out of the loop after flights have been queued and departed
         if len(queue) == 0 and queueCount >= len(allFlights):
+            print("All flights have departed")
             break
 
         currentTime += 1
@@ -125,7 +127,7 @@ def simulate_airport(allFlights):
 
 def takeOffPrint(departedFlights):
     '''
-
+    In this
     :param departedFlights:
     :return:
     '''
