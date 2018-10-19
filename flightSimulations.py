@@ -19,6 +19,12 @@ departedFlights = []
 
 
 def read_file(flightRequests):  # Function that will read in the file
+    '''
+
+    :param flightRequests:
+    :return:
+
+    '''
     allFlights = []  # Flight request are held in this
 
     with open(flightRequests, 'rt') as f:
@@ -35,6 +41,12 @@ def read_file(flightRequests):  # Function that will read in the file
 
 # prints flights that are currently in the queue
 def printQueue(queue, currentTime):
+    '''
+
+    :param queue:
+    :param currentTime:
+    :return:
+    '''
     if len(queue) > 0:
         print("\n=======================================================")
         print("The queue at Time: " + str(currentTime))
@@ -59,6 +71,11 @@ def printQueue(queue, currentTime):
 
 # This function is going to be removing and adding flights from the queue. Basically like how the airport functions
 def simulate_airport(allFlights):
+    '''
+
+    :param allFlights:
+    :return:
+    '''
     queue = []  # queue used for flight request
     currentTime = 0
     queueCount = 0
@@ -91,6 +108,11 @@ def simulate_airport(allFlights):
 
 
 def takeOffPrint(departedFlights):
+    '''
+
+    :param departedFlights:
+    :return:
+    '''
 
     print("\n=======================================================")
     print("Take off times: ")
