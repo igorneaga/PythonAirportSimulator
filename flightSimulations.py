@@ -106,7 +106,7 @@ def simulate_airport(allFlights):
 
                 else:
                     queue[i][4] = queue[i][2]  # curent flight actual start time = current flight flight request time
-                    queue[i][5] = (queue[i][4] + queue[i][3])  #
+                    queue[i][5] = (queue[i][4] + queue[i][3])  # current flight actual time = current flight
 
     # remove flights that have already departed from the queue
         if len(queue) > 0:
