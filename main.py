@@ -10,7 +10,7 @@ import flightSimulations
 
 if __name__ == "__main__":
     flights = flightSimulations.read_file(sys.argv[1])
-    print("Flight from file are: Delta 160, UAL 120, Delta 6, Wes 10, Mex, pizza 6 and jet 7")  # Expected read in data
+    print("Flights from file: Delta 160, UAL 120, Delta 6, Wes 10, Mex, pizza 6 and jet 7")  # Expected read in data
     print(flights)  # Actual data that is read in from the cvs
     flightSimulations.simulate_airport(flights)
     flightSimulations.takeOffPrint(flights)  # actual output
