@@ -1,6 +1,6 @@
 Erik Ayavaca-Tirado
 Iteration tasks for python project
-10/13/18
+10/22/18
 
 Below is list of parts for this project.
 
@@ -23,4 +23,4 @@ Plans for iteration 1:
 
 Plans for iteration 2:
 
-   My plans for this iteration are to have the priority queue implemented in some sort of way.
+   My plans for this iteration are to have the priority queue implemented in some sort of way. I created my own
