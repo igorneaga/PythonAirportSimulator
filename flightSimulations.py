@@ -1,5 +1,4 @@
 import csv
-# import sys
 
 '''
 By Erik Ayavaca-Tirado
@@ -26,7 +25,6 @@ def read_file(flightRequests):  # Function that will read in the file
     It will put the file data in to list named allFlights and then returns it ,so it may be used for the other functions
     :param flightRequests:
     :return:
-
     '''
     allFlights = []  # Flight request are held in this
 
@@ -44,9 +42,10 @@ def read_file(flightRequests):  # Function that will read in the file
 
 def printQueue(queue, currentTime):
     '''
-    This function is printing out the flights that are currently in the queue
-    :param queue:
-    :param currentTime:
+    This function is printing out the flights that are currently in the queue as well as the time they were on the
+    runway until they depart from the runway.
+    :param queue: Keeps tracks of the flights
+    :param currentTime: Keeps track of the time.
     :return:
     '''
     if len(queue) > 0:
@@ -74,6 +73,7 @@ def printQueue(queue, currentTime):
 def simulate_airport(allFlights):
     '''
     This function is going to be removing and adding flights from the queue. Basically like how the airport functions.
+    This functions is basically the priority queue.
     :param allFlights:
     :return:
     '''
