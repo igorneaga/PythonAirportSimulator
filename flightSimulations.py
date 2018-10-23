@@ -42,10 +42,9 @@ def read_file(flightRequests):  # Function that will read in the file
     return(allFlights)
 
 
-# prints flights that are currently in the queue
 def printQueue(queue, currentTime):
     '''
-    This function is printing out the
+    This function is printing out the flights that are currently in the queue
     :param queue:
     :param currentTime:
     :return:
@@ -72,10 +71,9 @@ def printQueue(queue, currentTime):
         print("Waiting: ")
 
 
-# This function is going to be removing and adding flights from the queue. Basically like how the airport functions
 def simulate_airport(allFlights):
     '''
-
+    This function is going to be removing and adding flights from the queue. Basically like how the airport functions.
     :param allFlights:
     :return:
     '''
