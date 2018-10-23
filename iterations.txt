@@ -23,4 +23,5 @@ Plans for iteration 1:
 
 Plans for iteration 2:
 
-   My plans for this iteration are to have the priority queue implemented in some sort of way. I created my own
+   My plans for this iteration are to have the priority queue implemented in some sort of way. I created my own priority
+   queue within the airport simulation function.
