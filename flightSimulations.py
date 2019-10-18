@@ -22,39 +22,39 @@ class FlightSimulation:
 
     def main_logic(self):
 
-        def read_file(flightRequests):  # Function that will read in the file
+        def read_file(flight_requests):  # Function that will read in the file
             '''
             This function will take in the file that is read in from the command prompt. This variable name is flightRequests.
             It will put the file data in to list named allFlights and then returns it ,so it may be used for the other functions
-            :param flightRequests:
+            :param flight_requests:
             :return:
             '''
 
-            allFlights = []  # Flight request are held in this
+            all_flights = []  # Flight request are held in this
 
-            with open(flightRequests, 'rt') as f:
+            with open(flight_requests, 'rt') as f:
                 file = csv.reader(f)
                 _ = next(file)  # removes cvs header
 
                 for row in file:
                     # Converts submission time, request start , and requested duration from strings into integers
-                    newRow = [row[0], int(row[1]), int(row[2]), int(row[3]), 0, 0]
+                    new_row = [row[0], int(row[1]), int(row[2]), int(row[3]), 0, 0]
 
-                    allFlights.append(newRow)
-            return allFlights
+                    all_flights.append(new_row)
+            return all_flights
 
-        def printQueue(queue, currentTime):
+        def print_queue(queue, current_time):
             '''
             This function is printing out the flights that are currently in the queue as well as the time they were on the
             runway until they depart from the runway.
             :param queue: Keeps tracks of the flights
-            :param currentTime: Keeps track of the time.
+            :param current_time: Keeps track of the time.
             :return:
             '''
             if len(queue) > 0:
                 print("\n=======================================================")
-                print("The queue at Time: " + str(currentTime))
-                if (currentTime >= queue[0][2]):
+                print("The queue at Time: " + str(current_time))
+                if (current_time >= queue[0][2]):
                     print("Currently Departing: " + str(queue[0][0]) + " (started at " + str(queue[0][4]) + ")")
                     print("Waiting: ")
                 for i in range(1, len(queue)):
@@ -68,7 +68,7 @@ class FlightSimulation:
 
             else:
                 print("\n=======================================================")
-                print("The queue at Time: " + str(currentTime))
+                print("The queue at Time: " + str(current_time))
                 print("Currently Departing: No flights are currently departing ")
                 print("Waiting: ")
 
@@ -80,16 +80,16 @@ class FlightSimulation:
             :return:
             '''
             queue = []  # queue used for flight request
-            departedFlights = []
-            currentTime = 0
-            queueCount = 0
+            departed_flights = []
+            current_time = 0
+            queue_count = 0
 
             # will continue running program if the queue count is less than number of flights or if the queue is not empty
-            while queueCount < len(allFlights) or len(queue) >= 0:
+            while queue_count < len(allFlights) or len(queue) >= 0:
                 for i in range(len(allFlights)):
-                    if currentTime == allFlights[i][1]:
+                    if current_time == allFlights[i][1]:
                         queue.append(allFlights[i])
-                        queueCount += 1
+                        queue_count += 1
 
                 # sort queue based on requested departure time
                 queue = sorted(queue, key=lambda x: x[2])
@@ -103,8 +103,7 @@ class FlightSimulation:
                                 3]) - 1)  # first flight actual end time is equal to current
 
                     if i > 0:  # all other flights in queue
-                        if queue[i - 1][5] > queue[i][
-                            2]:  # if previous flight end time,less than current flight requested start
+                        if queue[i - 1][5] > queue[i][2]:  # if previous flight end time,less than current flight requested start
                             queue[i][4] = queue[i - 1][
                                 5]  # current flight actual Start time equal to previous flight end time
                             queue[i][5] = (queue[i][4] + queue[i][3])  # Current Flight actual endtime = current flight
@@ -116,37 +115,37 @@ class FlightSimulation:
 
                 # remove flights that have already departed from the queue
                 if len(queue) > 0:
-                    if queue[0][5] <= currentTime:
-                        departedFlights.append(queue[0])
+                    if queue[0][5] <= current_time:
+                        departed_flights.append(queue[0])
                         del queue[0]
 
-                printQueue(queue, currentTime)
+                print_queue(queue, current_time)
 
                 # break out of the loop after flights have been queued and departed
-                if len(queue) == 0 and queueCount >= len(allFlights):
+                if len(queue) == 0 and queue_count >= len(allFlights):
                     print("All flights have departed")
                     break
 
-                currentTime += 1
-            return departedFlights
+                current_time += 1
+            return departed_flights
 
-        def takeOffPrint(departedFlights):
+        def take_off_print(departed_flights):
             '''
             In this function we are taking in the list of updated departed flights that were updated in the airport simulations
             function.
-            :param departedFlights:
+            :param departed_flights:
             :return:
             '''
 
             print("\n=======================================================")
             print("Actual take off times: ")
-            for i in range(len(departedFlights)):
-                print(str(departedFlights[i][0]) + " (" + str(departedFlights[i][4]) + "-" + str(
-                    departedFlights[i][5]) + ")")
+            for i in range(len(departed_flights)):
+                print(str(departed_flights[i][0]) + " (" + str(departed_flights[i][4]) + "-" + str(
+                    departed_flights[i][5]) + ")")
 
         self.all_flight = read_file(self.csv_file)
         self.departed_flight = simulate_airport(self.all_flight)
-        takeOffPrint(self.all_flight)
+        take_off_print(self.all_flight)
 
 
 
